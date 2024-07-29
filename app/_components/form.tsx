@@ -9,7 +9,7 @@ import { useSession } from 'next-auth/react';
 const Form =() =>{
   const {data} = useSession();
   const initialValues= {
-    name:data?.user?.name,
+    name:"",
     password:"",
     newPassword:"",
     confirmPassword:""
