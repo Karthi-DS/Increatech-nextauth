@@ -1,16 +1,20 @@
 "use client";
+import React from 'react'
 import Image from "next/image";
-import styles from "./page.module.css";
-import "./globals.css"
+import styles from "../page.module.css";
+import "../globals.css"
 import {useFormik} from "formik"
+import { useSession } from 'next-auth/react';
 
-export default function Home() {
+const Form =() =>{
+  const {data} = useSession();
   const initialValues= {
-    name:"",
+    name:data?.user?.name,
     password:"",
     newPassword:"",
     confirmPassword:""
   }
+  
   const onSubmit = (values:any)=>{
       // alert(JSON.stringify(values, null, 2));
       console.log("form data",values)
@@ -43,8 +47,6 @@ export default function Home() {
         errors.confirmPassword = "Password doesn't match"
       }
     }
-    // let returnObject = Object.getOwnPropertyNames(errors).length ===0?null:errors
-    // console.log(returnObject)
     return errors
   }
   const formik = useFormik({
@@ -52,7 +54,7 @@ export default function Home() {
     onSubmit: onSubmit,
     validate:validation
   })
-  console.log(formik.errors)
+  console.log(initialValues,formik.values)
   return (
     <main className={styles.main}>
       <div>
@@ -76,6 +78,9 @@ export default function Home() {
         </form>
         </div>
       </div>
-    </main>
-  );
+    </main>)
 }
+
+export default Form;
+
+

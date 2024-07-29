@@ -19,10 +19,9 @@ export default function Login() {
     // })
     const response = await signIn('credentials',{
       name: values.name,
-      password:values.password,
-      redirect:false
+      password:values.password
     })
-    console.log("response",{response})
+    console.log("response",response)
   };
 
   

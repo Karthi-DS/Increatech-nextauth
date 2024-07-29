@@ -1,7 +1,7 @@
-import NextAuth from "next-auth";
+import NextAuth,{NextAuthOptions} from "next-auth";
 import CredentailsProvider from "next-auth/providers/credentials"
 
-const handler = NextAuth ({
+export const authOptions:NextAuthOptions = {
     session: {
         strategy:'jwt'
     },
@@ -9,18 +9,29 @@ const handler = NextAuth ({
     providers:[
         CredentailsProvider({
             credentials: {},
-            async authorize(credentials:any,req:any){
+            authorize(credentials:any,req:any){
                 const {name,password} = credentials as {name: any,password:string}
                 if(name !=="karthee" || password !=="12345678"){
-                    return null
+                    throw new Error("Invalid Credentials")
                 }
                 else{
-                console.log("valid credentials")
-                return {id:"1",name:credentials.name,password:credentials.password}
+                // console.log(credentials)
+                return {id:"1",name:name}
                 }
             }
         })
-    ]
-})
+    ],
+    callbacks: {
+        async signIn() {
+            return true;
+        },
+        async redirect({ url, baseUrl }) {
+            // Redirect to the sign-in page after successful login
+            return '/signin/';
+        },
+    },
+}
+
+const handler = NextAuth (authOptions)
 
 export {handler as GET, handler as POST}
