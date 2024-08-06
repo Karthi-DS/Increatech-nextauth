@@ -1,13 +1,10 @@
 "use client";
-import React from 'react'
-import Image from "next/image";
+import React from "react";
 import styles from "../page.module.css";
-import "../globals.css"
-import {useFormik} from "formik"
-import { useSession } from 'next-auth/react';
+import "../globals.css";
+import {useFormik} from "formik";
 
 const Form =() =>{
-  const {data} = useSession();
   const initialValues= {
     name:"",
     password:"",
