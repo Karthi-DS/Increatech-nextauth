@@ -27,7 +27,7 @@ export const authOptions:NextAuthOptions = {
         },
         async redirect({ url, baseUrl }) {
             // Redirect to the sign-in page after successful login
-            return '/signin/';
+            return '/task_manager/';
         },
     },
 }

@@ -1,5 +1,6 @@
 "use client";
 import TaskCard from "../_components/TaskCard";
+import Navbar from "../_components/nav";
 import axios from "axios";
 import Link from "next/link";
 import "../globals.css"
@@ -30,6 +31,7 @@ export default function Home() {
   },[])
   return (
     <>
+      <Navbar/>
         {isLoading?"Loading..":tasks.length>0?
           tasks.map((task:any,index)=>(
             <div className="cardDiv" key={index}>         

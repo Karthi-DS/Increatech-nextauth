@@ -8,7 +8,7 @@ const TaskCard = ({ task }: { task: any }) => {
 
   const router = useRouter()
   const pushToUpdate = () =>{
-    router.push(`/task_page/${task._id}`)
+    router.push(`/task_page/${task.id}`)
   }
   return (
     <div className="taskCard">
@@ -23,7 +23,7 @@ const TaskCard = ({ task }: { task: any }) => {
       <div>
         <div className="inlineCard">
           <div className="iconDelete">
-            <DeleteBlock id={task._id}></DeleteBlock>
+            <DeleteBlock id={task.id}></DeleteBlock>
           </div>
           <div>
             <button className="editButton" onClick={pushToUpdate}>Edit</button>

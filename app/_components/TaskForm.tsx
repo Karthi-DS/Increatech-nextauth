@@ -5,7 +5,6 @@ import "../globals.css";
 import axios from 'axios';
 
 const TaskForm = ({taskId}:{taskId:any}) => {
-  console.log(taskId)
     const router = useRouter()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const startingTaskData = {
@@ -13,7 +12,6 @@ const TaskForm = ({taskId}:{taskId:any}) => {
         priority:0
     }
     const [formData,setFormData] = useState(startingTaskData)
-    console.log(formData)
     const handleChange = (e:any)=>{
         const value = e.target.value;
         const name = e.target.name;
@@ -26,7 +24,6 @@ const TaskForm = ({taskId}:{taskId:any}) => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          console.log("taskId, formData", taskId, formData);
           if (taskId) {
             const res = await axios.get(`http://localhost:3000/api/getTaskById/${taskId}`);
             if(res.status == 200){
@@ -59,7 +56,6 @@ const TaskForm = ({taskId}:{taskId:any}) => {
           body:JSON.stringify({formData})
 
         })
-        console.log(res)
         if(!res.ok){
           throw new Error("Failed to Create Ticket")
         }
