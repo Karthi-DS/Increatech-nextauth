@@ -1,11 +1,11 @@
 import React from 'react'
-import TaskForm from '../../../_components/TaskForm'
+import UserForm from '../../../_components/UserForm'
 
 const page = ({params}:{params:any}) => {
   // const {taskId} = task
   return (
     <div>
-      <TaskForm taskId={params.taskId}></TaskForm>
+      <UserForm userId={params.userId}></UserForm>
     </div>
   )
 }

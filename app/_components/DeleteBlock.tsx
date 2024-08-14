@@ -1,16 +1,15 @@
 "use client";
 import { useRouter } from 'next/navigation';
+import { env } from 'process';
+import { apifunc } from '../api';
 
-const DeleteBlock = ({id}:{id:any}) => {
-  
+const DeleteBlock = ({_id}:{_id:any}) => {
+  console.log(_id)
   const router = useRouter()
-  const deleteTicket =async (e:any) =>{
-    let url = `http://localhost:3000/api/deleteTaskById/${id}`
+  const deleteUser =async (e:any) =>{
       e.preventDefault();
-      const res = await fetch(url,{
-        method:"POST"
-      })
-      if(!res.ok){
+      const res = await apifunc.post("deleteuser",{id:_id})
+      if(res.status !==200){
         throw new Error("Failed to Create Ticket")
       } else{
         router.refresh()
@@ -18,7 +17,7 @@ const DeleteBlock = ({id}:{id:any}) => {
   }
   return (
     <div>
-        <button onClick={deleteTicket} className="deleteButton" >Delete</button>
+        <button onClick={deleteUser} className="deleteButton" >Delete</button>
     </div>
   )
 }
