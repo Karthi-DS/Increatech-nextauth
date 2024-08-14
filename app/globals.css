@@ -200,6 +200,8 @@ a {
 
 .attribute{
   width: 100px;
+  color: white;
+  font-weight: 600;
 }
 
 .userCard{

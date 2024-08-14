@@ -23,6 +23,8 @@ const Navbar = () => {
         </Link>
         <ul className="menu">
         <li><Link href="/signin/">Change Password</Link></li>
+        <li><Link href="/task_manager/">Task Manager</Link></li>
+        <li><Link href="/user_management/">User Management</Link></li>
           {session ? (
             <li className="session">Hello, {session?.user?.name}</li>
           ) : (
