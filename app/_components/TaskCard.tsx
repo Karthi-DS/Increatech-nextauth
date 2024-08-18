@@ -3,6 +3,7 @@ import DeleteBlock from "./DeleteBlock";
 import PriorityDisplay from "./PriorityDisplay";
 import "../globals.css";
 import { useRouter } from "next/navigation";
+import "../globals.css"
 
 const TaskCard = ({ task }: { task: any }) => {
 
@@ -23,7 +24,7 @@ const TaskCard = ({ task }: { task: any }) => {
       <div>
         <div className="inlineCard">
           <div className="iconDelete">
-            <DeleteBlock id={task.id}></DeleteBlock>
+            <DeleteBlock _id={task.id}></DeleteBlock>
           </div>
           <div>
             <button className="editButton" onClick={pushToUpdate}>Edit</button>

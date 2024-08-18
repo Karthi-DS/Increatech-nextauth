@@ -3,6 +3,7 @@ import React from "react";
 import styles from "../page.module.css";
 import "../globals.css";
 import {useFormik} from "formik";
+import "../globals.css"
 
 const Form =() =>{
   const initialValues= {

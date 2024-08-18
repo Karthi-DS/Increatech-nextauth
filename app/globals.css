@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
@@ -21,198 +24,114 @@ a {
   text-decoration: none;
 }
 
-.practiceform{
-  width: 400px;
-  background-color: whitesmoke;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
+/* styles.css */
+.practiceform {
+  @apply w-96 bg-gray-100 p-5 flex justify-center;
 }
 
 .practiceform label {
-  display: block;
-  font-size: larger;
-  font-weight: 600;
-  margin:6px 0px 6px 0px;
+  @apply block text-lg font-semibold my-1.5;
 }
 
 .practiceform input[type="text"],
-.practiceform input[type="number"]{
-  border:none;
-  padding: 15px;
-  border:1px solid rgba(220, 147, 147, 0.801);
-  border-radius:5px;
+.practiceform input[type="number"] {
+  @apply border p-4 border-[rgba(220,147,147,0.8)] rounded;
 }
 
-.practiceform input[type="submit"]{
-  display: block;
-  border-radius:3px;
-  padding:6px;
-  margin: 7px auto;
-  font-size:larger;
-  font-weight: bolder;
-  background-color: rgb(237, 205, 205);
-  border:1px solid rgba(220, 147, 147, 0.801);
+.practiceform input[type="submit"] {
+  @apply block rounded p-1.5 my-2 mx-auto text-lg font-bold bg-pink-200 border border-[rgba(220,147,147,0.8)];
 }
 
-
-.error{
-  color: red;
-  margin: 3px 0px;
+.error {
+  @apply text-red-500 my-1;
 }
 
-
-.taskCard{
-  width: 300px;
-  height:100%;
-  background-color: rgb(168, 204, 224);
-  color: white;
-  padding: 10px;
-  display: block;
-  margin-bottom: 30px;
-  border-radius: 4px;
+.taskCard {
+  @apply w-72 h-full bg-blue-300 text-white p-2.5 mb-7 rounded;
 }
 
-.inlineCard{
-  display: flex;
-  justify-content: space-between;
+.inlineCard {
+  @apply flex justify-between;
 }
 
-.iconPriority,.iconDelete{
-  padding: 3px;
-  font-size: larger;
+.iconPriority, .iconDelete {
+  @apply p-1 text-lg;
 }
 
-.deleteButton{
-  color: whitesmoke;
-  border:none;
-  background-color: red;
-  font-size: 16px;
-  font-family: 'Courier New', Courier, monospace;
-  padding: 4px;
-  border-radius: 4px;
+.deleteButton {
+  @apply text-white border-none bg-red-500 text-lg font-mono p-1 rounded;
 }
 
-.editButton{
-  color: whitesmoke;
-  border:none;
-  background-color: rgb(46, 202, 46);
-  font-size: 16px;
-  font-family: 'Courier New', Courier, monospace;
-  padding: 4px;
-  border-radius: 4px;
+.editButton {
+  @apply text-white border-none bg-green-500 text-lg font-mono p-1 rounded;
 }
 
-.iconDelete:hover{
-  color: brown;
+.iconDelete:hover {
+  @apply text-red-400;
 }
 
-.taskInfo{
-  color: azure;
-  font-size: larger;
-  padding: 3px;
-  text-align: center;
+.taskInfo {
+  @apply text-azure text-lg p-1 text-center;
 }
 
-.taskInfoTask{
-  color: bisque;
-  font-size: larger;
+.taskInfoTask {
+  @apply text-bisque text-lg;
 }
 
-.centerDiv{
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.centerDiv {
+  @apply w-full flex justify-center;
 }
 
-.cardDiv{
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.cardDiv {
+  @apply w-full flex justify-center;
 }
-
-.addTask{
-  position:absolute;
-  border-radius:40%;
-  border:none;
-  background-color: rgb(168, 204, 224);
-  color: white;
-  font-size: 16px;
-  bottom: 0;
-  right:0;
-  padding: 10px;
-  margin:30px 20px;
+.addTask {
+  @apply absolute rounded-full border-none bg-blue-300 text-white text-lg bottom-0 right-0 p-2.5 m-7;
 }
-
 /* components/Navbar.module.css */
 .navbar {
-  background-color: #28a7de;
-  color: white;
-  padding: 1rem;
-  margin-bottom: 20px;
+  @apply bg-blue-400 text-white p-4 mb-5;
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @apply flex justify-between items-center;
 }
 
 .brand {
-  font-size: 1.5rem;
-  color: white;
-  text-decoration: none;
+  @apply text-xl text-white no-underline;
 }
 
 .menu {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
+  @apply list-none flex gap-4;
 }
 
 .menu li {
-  margin: 0;
+  @apply m-0;
 }
 
 .menu a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
+  @apply text-white no-underline p-2;
 }
 
 .menu a:hover {
-  background-color: #555;
-  border-radius: 4px;
+  @apply bg-gray-700 rounded;
 }
 
 .session {
-  font-weight: bold;
+  @apply font-bold;
+}
+.userDetails {
+  @apply my-2 text-lg text-white w-72 flex;
 }
 
-
-.userDetails{
-  margin:8px 0px;
-  font-size: 20px;
-  color: whitesmoke;
-  width: 300px;
-  display: flex;
+.attribute {
+  @apply w-24 text-white font-semibold;
 }
 
-.attribute{
-  width: 100px;
-  color: white;
-  font-weight: 600;
+.userCard {
+  @apply w-72 bg-blue-300 text-white p-2.5 mb-7 rounded;
 }
 
-.userCard{
-  width: 300px;
-  background-color: rgb(168, 204, 224);
-  color: white;
-  padding: 10px;
-  display: block;
-  margin-bottom: 30px;
-  border-radius: 4px;
-}
 
 
 

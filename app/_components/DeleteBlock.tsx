@@ -2,6 +2,7 @@
 import { useRouter } from 'next/navigation';
 import { env } from 'process';
 import { apifunc } from '../api';
+import "../globals.css"
 
 const DeleteBlock = ({_id}:{_id:any}) => {
   console.log(_id)

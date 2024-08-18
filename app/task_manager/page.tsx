@@ -12,7 +12,7 @@ export default function Home() {
   const [isLoading,setLoading] = useState(false);
   const router = useRouter()
   const pushToAddTask = ()=>{
-    router.push("/task_page/new")
+    router.push("/task_manager/task_page/new")
   }
   useEffect(()=>{
     const fetchData = async () => {
