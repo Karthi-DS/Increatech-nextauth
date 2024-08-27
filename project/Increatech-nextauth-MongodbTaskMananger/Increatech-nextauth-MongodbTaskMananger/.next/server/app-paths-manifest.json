@@ -1,0 +1,11 @@
+{
+  "/page": "app/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/updateTaskById/[id]/route": "app/api/updateTaskById/[id]/route.js",
+  "/api/getTasks/route": "app/api/getTasks/route.js",
+  "/api/createTask/route": "app/api/createTask/route.js",
+  "/api/deleteTaskById/[id]/route": "app/api/deleteTaskById/[id]/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/task_manager/page": "app/task_manager/page.js",
+  "/task_manager/task_page/page": "app/task_manager/task_page/page.js"
+}
