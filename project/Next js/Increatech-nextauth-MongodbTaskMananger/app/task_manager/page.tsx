@@ -5,13 +5,17 @@ import Link from "next/link";
 import "../globals.css"
 import React,{useEffect,useState} from "react";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { addTask } from "../taskSlice";
 
 export default function Home() {
   const [tasks,setTasks] = useState([{task:"goto gym",priority:3}])
   const [isLoading,setLoading] = useState(false);
+  const dispatch = useDispatch();
   const router = useRouter()
   const pushToAddTask = ()=>{
-    router.push("/task_page/new")
+    router.push("task_manager/task_page/")
+    dispatch(addTask({taskId:"new"}))
   }
   useEffect(()=>{
     const fetchData = async () => {

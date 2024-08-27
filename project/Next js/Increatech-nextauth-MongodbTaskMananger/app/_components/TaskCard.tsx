@@ -10,11 +10,12 @@ const TaskCard = ({ task }: { task: any }) => {
 
   const router = useRouter()
   const dispatch = useDispatch()
-  useEffect(()=>{
-    dispatch(addTask(task));
-  },[dispatch, task])
+  // useEffect(()=>{
+    
+  // },[dispatch, task])
   const pushToUpdate = () =>{
-    router.push(`/task_page/${task._id}`)
+    router.push(`/task_manager/task_page/`)
+    dispatch(addTask(task));
   }
   return (
     <div className="taskCard">
